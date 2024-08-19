@@ -11,6 +11,9 @@ class Persona():
     def caminar(self):
         print(f"{self.nombre} está caminando por las calles")
 
+    def comer(self):
+        print(f"{self.nombre} está comiendo pizza")
+
 # Creación de un objeto de la clase Persona
 persona1 = Persona()
 
@@ -22,3 +25,4 @@ print(f"Edad: {persona1.edad} años")
 # Llamando a los métodos de la Clase
 persona1.hablar()
 persona1.caminar()
+persona1.comer()
