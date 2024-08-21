@@ -1,3 +1,4 @@
+# 19 de agosto de 2024
 class Persona():
     # Atributos de Clase (Características compartidas por todos los objetos de la clase)
     nombre = "Bryan"
