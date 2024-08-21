@@ -1,7 +1,7 @@
 class Persona():
     # Atributos de Clase (Características compartidas por todos los objetos de la clase)
     nombre = "Bryan"
-    apellido = "Apellido"
+    apellido = "Cárcamo"
     edad = 18
 
     # Métodos (Comportamientos)
@@ -26,3 +26,4 @@ print(f"Edad: {persona1.edad} años")
 persona1.hablar()
 persona1.caminar()
 persona1.comer()
+
