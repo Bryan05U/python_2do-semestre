@@ -49,13 +49,14 @@ class Persona():
         else:
             print(f"Rango de IMC: obesidad 3")
 
-    def promedio_asignatura(self, n1, n2, n3):
-        print(f"El promedio de la asignatura es de: ", {self.n1}+{self.n2}+{self.n3} / 3)
-        n1 = 4.5
-        n2 = 3.7
-        n3 = 4.4
+    def promedio_asignatura(self, n1: float, n2: float, n3: float):
+        promedio = (n1 + n2 + n3) / 3
+        if promedio >= 4.0:
+            print(f"{self.nombre} ha aprobado con un promedio de {promedio}")
+        else:
+            print(f"{self.nombre} ha reprobado con un promedio de {promedio}")
 
-# Creación de un objeto de la clase Persona y agregando los atributos
+# Creación de objetos de la clase Persona y agregando los atributos
 persona1 = Persona("Bryan", "Cárcamo", 18, 1.75, 90)
 
 # Acceso a los atributos y métodos del objeto
@@ -69,4 +70,5 @@ print(f"Peso: {persona1.peso}")
 persona1.hablar()
 persona1.caminar()
 persona1.comer()
-persona1.calcularIMC()
+persona1.calcularIMC() # Calcular IMC
+persona1.promedio_asignatura(6.2, 4.4, 5.0) # Promedio notas
