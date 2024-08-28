@@ -21,8 +21,8 @@ class Persona():
         self.nombre = nombre
         self.apellido = apellido
         self.edad = edad
-        self.estatura = estatura
-        self.peso = peso
+        self.estatura = float(estatura)
+        self.peso = float(peso)
 
     # Métodos (Comportamientos)
     def hablar(self):
@@ -36,6 +36,18 @@ class Persona():
 
     def calcularIMC(self):
         print(f"El IMC es de: ", (math.trunc(self.peso / self.estatura **2)))
+        if (self.peso / self.estatura **2) < 18.5:
+            print(f"Rango de IMC: por debajo")
+        elif (self.peso / self.estatura **2) >= 18.5 and (self.peso / self.estatura **2) < 24.9:
+            print(f"Rango de IMC: saludable")
+        elif (self.peso / self.estatura **2) >= 25 and (self.peso / self.estatura **2) < 29.9:
+            print(f"Rango de IMC: sobrepeso")
+        elif (self.peso / self.estatura **2) >= 30 and (self.peso / self.estatura **2) < 34.9:
+            print(f"Rango de IMC: obesidad 1")
+        elif (self.peso / self.estatura **2) >= 35 and (self.peso / self.estatura **2) < 39.9:
+            print(f"Rango de IMC: obesidad 2")
+        else:
+            print(f"Rango de IMC: obesidad 3")
 
     def promedio_asignatura(self, n1, n2, n3):
         print(f"El promedio de la asignatura es de: ", {self.n1}+{self.n2}+{self.n3} / 3)
