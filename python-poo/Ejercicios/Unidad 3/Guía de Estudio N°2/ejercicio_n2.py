@@ -25,3 +25,66 @@ En el supuesto, que deseas calcular el costo final de una suscripción aplicando
 ¿Qué métodos debería exponer la clase principal para permitir la creación de suscripciones, la consulta de costo y la aplicación de descuentos?
 ¿Cómo puedes estructurar estos métodos en la interfaz de la clase?
 """
+
+class Suscripcion:
+    descuento_anual = 0.15  # 15% de descuento para suscripciones anuales.
+
+class Suscripcion:
+    def __init__(self, nombre_cliente, tipo_suscripcion, costo_base):
+        self.nombre_cliente = nombre_cliente
+        self.tipo_suscripcion = tipo_suscripcion
+        self._costo_base = costo_base
+        self._costo_final = costo_base
+
+    def setCosto(self, nuevo_costo):
+        # Validar tipo de suscripción y aplicar descuento
+        if self.tipo_suscripcion == 'anual':
+            self._costo_final = nuevo_costo * (1 - Suscripcion.descuento_anual)
+        else:
+            self._costo_final = nuevo_costo
+
+    def getCosto(self):
+        return self._costo_final
+
+class Suscripcion:
+    descuento_bienvenida = 0.10  # 10% de descuento para nuevos clientes
+
+    @staticmethod
+    def calcularCostoConDescuentoBienvenida(costo_base):
+        return costo_base * (1 - Suscripcion.descuento_bienvenida)
+
+costo_con_descuento = Suscripcion.calcularCostoConDescuentoBienvenida(100)
+print(costo_con_descuento)  # 90.0
+
+def setCosto(self, nuevo_costo):
+    assert nuevo_costo >= 0, "El costo no puede ser negativo"
+    self._costo_base = nuevo_costo
+    # Aquí va la lógica para aplicar descuentos si es necesario
+
+class Suscripcion:
+    descuento_anual = 0.15  # Descuento anual global.
+
+    def __init__(self, nombre_cliente, tipo_suscripcion, costo_base):
+        assert tipo_suscripcion in ['mensual', 'trimestral', 'anual'], "Tipo de suscripción inválido"
+        self.nombre_cliente = nombre_cliente
+        self.tipo_suscripcion = tipo_suscripcion
+        self._costo_base = costo_base
+        self._costo_final = costo_base
+
+    def setCosto(self, nuevo_costo):
+        assert nuevo_costo >= 0, "El costo no puede ser negativo"
+        if self.tipo_suscripcion == 'anual':
+            self._costo_final = nuevo_costo * (1 - Suscripcion.descuento_anual)
+        else:
+            self._costo_final = nuevo_costo
+
+    def getCosto(self):
+        return self._costo_final
+
+    @staticmethod
+    def calcularCostoConDescuentoBienvenida(costo_base):
+        return costo_base * (1 - Suscripcion.descuento_bienvenida)
+
+    def aplicarDescuento(self):
+        if self.tipo_suscripcion == 'anual':
+            self._costo_final *= (1 - Suscripcion.descuento_anual)
